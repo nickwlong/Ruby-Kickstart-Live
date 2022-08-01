@@ -17,15 +17,16 @@
 
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
-
-def hi_hi_goodbye
-  # your code here
+def prompt
+  puts 'Enter a number or bye'
 end
 
 
-
-
-# This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb" 
-# but it will still work for our tests
-hi_hi_goodbye if $0 == __FILE__
+def hi_hi_goodbye
+  prompt
+  while (num = gets) && (num !=~/bye/)
+    num.to_i.times {puts "hi"}
+    prompt
+  end
+  puts "Goodbye!"
+end

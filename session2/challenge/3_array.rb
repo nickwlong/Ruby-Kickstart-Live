@@ -7,5 +7,7 @@
 
 class String
   def every_other_char
+    to_return = each_char.select.with_index {|l, i| i.even?}.join
+    to_return
   end
 end
