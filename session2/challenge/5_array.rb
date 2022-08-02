@@ -13,3 +13,11 @@
 # mod_three [7]  # => [1]
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
+
+def mod_three(arr)
+    if arr.size > 0 
+        arr.map! {|i| i % 3}.delete_if {|i| i == 0}
+    end
+end
+
+
